@@ -1,0 +1,45 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="mb-50-px mt-30-px offset-md-5">
+      <a routerLink="/add" class="btn btn-warning">Add A New Cake</a>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let cake of allCake$ | async">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ cake.name }}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price {{ cake.cost }}</li>
+          </ul>
+          <p class="card-text">
+            {{ cake.description }}
+          </p>
+        </div>
+        <div class="card-body">
+          <a class="btn btn-warning" [routerLink]="['/edit', cake.id]">Edit</a>
+          <button type="button" class="btn btn-danger" (click)="openDeleteConfirm(cake.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Confiramtion</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       Are you sure to delete this item?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">confirm delete</button>
+      </div>
+    </div>
+  </div>
+</div>

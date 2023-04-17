@@ -1,0 +1,22 @@
+{
+  "cakes": [
+    {
+      "id": 2,
+      "name": "Liem Cake2",
+      "description": "So Sweet2",
+      "cost": 2902
+    },
+    {
+      "id": 3,
+      "name": "trang cake",
+      "description": "so delicious",
+      "cost": 2123123
+    },
+    {
+      "id": 4,
+      "name": "abc3",
+      "description": "abcc3",
+      "cost": 123453
+    }
+  ]
+}
